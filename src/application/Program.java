@@ -2,8 +2,10 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import entities.Product;
+import util.UperCaseName;
 
 public class Program {
 
@@ -15,13 +17,12 @@ public class Program {
 		listaProdutos.add(new Product("Tablet", 350.50));
 		listaProdutos.add(new Product("HD case", 80.90));
 
-		// percorer minha lista e aumentar o produto em 10%
+		// Produzir os nomes dos produtos em caixa alta
 
-		double factor = 1.1;
+		// O Map tem que ser atribuido a uma lista de Streams
 
-		listaProdutos.forEach(p -> p.setPrice(p.getPrice() * factor));
-
-		listaProdutos.forEach(System.out::println);
+		List<String> name = listaProdutos.stream().map(new UperCaseName()).collect(Collectors.toList());
+		name.forEach(System.out::println);
 
 	}
 
