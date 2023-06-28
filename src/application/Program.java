@@ -20,7 +20,7 @@ public class Program {
 
 		// O Map tem que ser atribuido a uma lista de Streams
 
-		List<String> name = listaProdutos.stream().map(Product::staticUperCaseName).collect(Collectors.toList());
+		List<String> name = listaProdutos.stream().map(Product::noStaticUperCaseName).collect(Collectors.toList());
 		name.forEach(System.out::println);
 
 	}
