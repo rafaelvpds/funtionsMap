@@ -2,7 +2,6 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import entities.Product;
@@ -21,8 +20,7 @@ public class Program {
 
 		// O Map tem que ser atribuido a uma lista de Streams
 
-		Function<Product, String> uperCaseName = p -> p.getNome().toUpperCase();
-		List<String> name = listaProdutos.stream().map(uperCaseName).collect(Collectors.toList());
+		List<String> name = listaProdutos.stream().map(p -> p.getNome().toUpperCase()).collect(Collectors.toList());
 		name.forEach(System.out::println);
 
 	}
