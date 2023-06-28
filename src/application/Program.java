@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import entities.Product;
-import util.UperCaseName;
 
 public class Program {
 
@@ -21,7 +20,7 @@ public class Program {
 
 		// O Map tem que ser atribuido a uma lista de Streams
 
-		List<String> name = listaProdutos.stream().map(new UperCaseName()).collect(Collectors.toList());
+		List<String> name = listaProdutos.stream().map(Product::staticUperCaseName).collect(Collectors.toList());
 		name.forEach(System.out::println);
 
 	}
